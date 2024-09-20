@@ -1,6 +1,6 @@
-import { Handler } from 'aws-lambda';
+import { Handler, Context } from 'aws-lambda';
 
-export const handler: Handler = async (event, context) => {
-    console.log('EVENT: \n' + JSON.stringify(event, null, 2));
-    return context.logStreamName;
+export const handler: Handler = async (event: any, context: Context) => {
+  console.log('EVENT: \n' + JSON.stringify(event, null, 2));
+  return context.logStreamName;
 };
